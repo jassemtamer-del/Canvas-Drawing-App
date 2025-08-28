@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing App (JAS)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hi Jassem, Your Canvas Drawing App</h1>
+        </header>
+
+        <div class="app-container">
+            <div class="sidebar">
+                <div class="panel">
+                    <h3>Tools</h3>
+                    <div class="tools-grid">
+                        <button id="brush-tool" class="tool-btn active" data-tool="brush">
+                            <span class="icon">✏️</span> Brush
+                        </button>
+                        <button id="eraser-tool" class="tool-btn" data-tool="eraser">
+                            <span class="icon">🧹</span> Eraser
+                        </button>
+                        <button id="line-tool" class="tool-btn" data-tool="line">
+                            <span class="icon">📏</span> Line
+                        </button>
+                        <button id="rectangle-tool" class="tool-btn" data-tool="rectangle">
+                            <span class="icon">⬜</span> Rectangle
+                        </button>
+                        <button id="circle-tool" class="tool-btn" data-tool="circle">
+                            <span class="icon">⭕</span> Circle
+                        </button>
+                        <button id="text-tool" class="tool-btn" data-tool="text">
+                            <span class="icon">T</span> Text
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Colors</h3>
+                    <div class="color-palette">
+                        <div class="color-grid">
+                            <div class="color-option active" data-color="#000000" style="background-color: #000000;"></div>
+                            <div class="color-option" data-color="#ffffff" style="background-color: #ffffff; border: 1px solid #ddd;"></div>
+                            <div class="color-option" data-color="#ff0000" style="background-color: #ff0000;"></div>
+                            <div class="color-option" data-color="#00ff00" style="background-color: #00ff00;"></div>
+                            <div class="color-option" data-color="#0000ff" style="background-color: #0000ff;"></div>
+                            <div class="color-option" data-color="#ffff00" style="background-color: #ffff00;"></div>
+                            <div class="color-option" data-color="#ff00ff" style="background-color: #ff00ff;"></div>
+                            <div class="color-option" data-color="#00ffff" style="background-color: #00ffff;"></div>
+                            <div class="color-option" data-color="#ff9900" style="background-color: #ff9900;"></div>
+                            <div class="color-option" data-color="#9900ff" style="background-color: #9900ff;"></div>
+                        </div>
+                        <div class="custom-color">
+                            <label for="color-picker">Custom:</label>
+                            <input type="color" id="color-picker" value="#000000">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>Layers</h3>
+                    <div class="layers-container">
+                        <div class="layers-list" id="layers-list">
+                            <!-- Layers will be added dynamically -->
+                        </div>
+                        <div class="layers-controls">
+                            <button id="add-layer">+ Add Layer</button>
+                            <button id="delete-layer">Delete Layer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <h3>History</h3>
+                    <div class="history-controls">
+                        <button id="undo-btn">↶ Undo</button>
+                        <button id="redo-btn">↷ Redo</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="toolbar">
+                    <div class="tool-group">
+                        <label for="brush-size">Brush Size:</label>
+                        <input type="range" id="brush-size" min="1" max="50" value="5">
+                        <span id="size-display">5</span>
+                    </div>
+
+                    <div class="tool-group">
+                        <label for="fill-shape">Fill Shape:</label>
+                        <input type="checkbox" id="fill-shape">
+                    </div>
+
+                    <div class="tool-group">
+                        <button id="clear-canvas">Clear Canvas</button>
+                        <button id="save-canvas">Save</button>
+                        <button id="load-canvas">Load</button>
+                        <button id="download-canvas">Download</button>
+                    </div>
+                </div>
+
+                <div class="canvas-container">
+                    <canvas id="drawing-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="text-modal" class="modal">
+        <div class="modal-content">
+            <h2>Add Text</h2>
+            <input type="text" id="text-input" placeholder="Enter your text here">
+            <div class="modal-buttons">
+                <button id="text-cancel">Cancel</button>
+                <button id="text-apply">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
