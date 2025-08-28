@@ -596,15 +596,16 @@ canvas {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
-        justify-content: center;
+        justify-content: space-between;
     }
 
     .toolbar .tool-group:last-child button {
-        flex: 1 0 45%;
-        padding: 12px 8px;
-        font-size: 12px;
+        flex: 1 0 calc(50% - 4px);
+        padding: 10px 6px;
+        font-size: 11px;
         border-radius: 8px;
         min-height: 44px; /* 推荐的最小触摸目标尺寸 */
+        max-width: calc(50% - 4px); /* 确保每行两个按钮 */
     }
 
     #clear-canvas {
