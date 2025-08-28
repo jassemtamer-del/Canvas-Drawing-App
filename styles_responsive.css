@@ -292,25 +292,58 @@ input[type="color"] {
 }
 
 #clear-canvas, #save-canvas, #load-canvas, #download-canvas {
-    padding: 8px 15px;
-    background-color: #28a745;
+    padding: 10px 15px;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 #clear-canvas {
     background-color: #dc3545;
 }
 
-#clear-canvas:hover {
-    background-color: #c82333;
+#save-canvas {
+    background-color: #28a745;
 }
 
-#save-canvas:hover, #load-canvas:hover, #download-canvas:hover {
+#load-canvas {
+    background-color: #17a2b8;
+}
+
+#download-canvas {
+    background-color: #6f42c1;
+}
+
+#clear-canvas:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#save-canvas:hover {
     background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#load-canvas:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+#download-canvas:hover {
+    background-color: #5a32a3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
 .canvas-container {
@@ -562,13 +595,16 @@ canvas {
     .toolbar .tool-group:last-child {
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
+        gap: 8px;
+        justify-content: center;
     }
 
     .toolbar .tool-group:last-child button {
         flex: 1 0 45%;
-        padding: 8px 5px;
+        padding: 12px 8px;
         font-size: 12px;
+        border-radius: 8px;
+        min-height: 44px; /* 推荐的最小触摸目标尺寸 */
     }
 
     #clear-canvas {
